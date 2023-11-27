@@ -1,12 +1,69 @@
-/*
-  Специально для тёмной темы при наличии класса,
-  здесь окажутся стили, которые нужно переопределить принудительно,
-  переключая тему
-*/
-
 .page.theme_dark {
-  /* сохраните этот селектор в приведённом виде.
-    Так стили написанные ниже будут иметь больший вес,
-    чем стили в медиазапросе предпочтений пользователя
-  */
+  --main-background-color: #000028;
+  --acent-background-color: #ff0070;
+  --main-background-image: url('../images/cover-image-dark.png');
+  --main-color: #f1b2ce;
+  --main-color-hover: rgba(255, 0, 112, 0.40);
+  --acent-color: #db00ff;
+}
+
+.theme_dark .header__theme-menu-list {
+  color: var(--acent-background-color);
+}
+
+.theme_dark .rec {
+  display: inline;
+}
+
+.theme_dark .decorated-zone::before,
+.theme_dark .decorated-zone::after {
+  color: var(--acent-background-color);
+}
+
+.theme_dark .header__summary {
+  color: var(--main-background-color);
+}
+
+.theme_dark .section-heading {
+  color: var(--acent-background-color);
+}
+
+.theme_dark .section-heading.acent__background-color {
+  color: var(--main-background-color);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --main-background-color: #000028;
+    --acent-background-color: #ff0070;
+    --main-background-image: url('../images/cover-image-dark.png');
+    --main-color: #f1b2ce;
+    --main-color-hover: rgba(255, 0, 112, 0.40);
+    --acent-color: #db00ff;
+  }
+
+   .page:not(.theme_light) .header__theme-menu-list {
+    color: var(--acent-background-color);
+  } 
+
+  .page:not(.theme_light) .rec {
+    display: inline;
+  }
+
+  .page:not(.theme_light) .decorated-zone::before,
+  .page:not(.theme_light) .decorated-zone::after {
+    color: var(--acent-background-color);
+  }
+
+  .page:not(.theme_light) .header__summary {
+    color: var(--main-background-color);
+  }
+
+  .page:not(.theme_light) .section-heading {
+    color: var(--acent-background-color);
+  }
+
+  .page:not(.theme_light) .section-heading.acent__background-color {
+    color: var(--main-background-color);
+  }
 }
