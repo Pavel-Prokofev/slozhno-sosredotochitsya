@@ -1,10 +1,7 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 
-
-
 .page {
   /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
-  padding-inline: var(--regular-pag-padding, 10px);
   background: var(--main-background-color, #fff1f7) var(--main-background-image) no-repeat center / cover;
   background-attachment: fixed;
   color: var(--main-color, #353430);
@@ -26,7 +23,7 @@
   display: none;
   color: var(--acent-background-color);
   position: absolute;
-  inset-inline-end: 25px;
+  inset-inline-end: calc(25px + var(--regular-pag-padding, 10px));
   inset-block-start: var(--regular-pag-padding, 10px);
   text-transform: uppercase;
 }
@@ -89,8 +86,9 @@
 .main {
   display: flex;
   flex-direction: column;
-  row-gap: clamp(3.125rem, 2.0416rem + 4.6225vw, 5rem);
+  row-gap: clamp(3.125rem, 1.3359rem + 7.6336vw, 5rem);
   padding-block: clamp(2.5rem, 1.3073rem + 5.0891vw, 3.75rem);
+  padding-inline: var(--regular-pag-padding, 10px);
 }
 
 .standard-section {
@@ -171,6 +169,7 @@
   block-size: 100dvh;
   position: relative;
   padding-block: var(--regular-pag-padding, 10px);
+  padding-inline: var(--regular-pag-padding, 10px);
 }
 
 .decorated-zone::before {
@@ -180,7 +179,7 @@
   border-inline-end: 1px solid currentColor;
   border-block-start: 1px solid currentColor;
   position: absolute;
-  inset-inline-end: 0;
+  inset-inline-end: var(--regular-pag-padding, 10px);;
   inset-block-start: var(--regular-pag-padding, 10px);
 }
 
@@ -191,7 +190,7 @@
   border-inline-start: 1px solid currentColor;
   border-block-end: 1px solid currentColor;
   position: absolute;
-  inset-inline-start: 0;
+  inset-inline-start: var(--regular-pag-padding, 10px);;
   inset-block-end: var(--regular-pag-padding, 10px);
 }
 
