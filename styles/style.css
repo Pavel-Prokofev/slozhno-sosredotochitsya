@@ -1,5 +1,7 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 
+
+
 .page {
   /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
   padding-inline: var(--regular-pag-padding, 10px);
@@ -76,6 +78,8 @@
 .header__heading {
   justify-self: start;
   text-shadow: 4px 4px 0px var(--acent-background-color, #ff8dcb);
+  position: relative;
+  margin-inline-start: calc(-5.09vw + 19.08px);
 }
 
 .header__summary {
@@ -103,10 +107,6 @@
   font-family: inherit;
   font-size: inherit;
   line-height: inherit;
-}
-
-.section-subheading {
-  margin-block-end: 20px;
 }
 
 .standard-list {
@@ -203,19 +203,50 @@
   font-weight: var(--acent-font-weight, 700);
 }
 
+@media (width<375px) {
+  .decorated-heading {
+    font-size: clamp(2.5rem, -2.9286rem + 43.4286vw, 7.25rem);
+  }
+}
+
 @media (width>=768px) {
 
   .decorated-heading {
     --decor-font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   }
 
+  .header__heading {
+    margin-inline-start: -20px;
+  }
+
+
   .header__summary {
     max-inline-size: clamp(22.75rem, -1.0625rem + 49.6094vw, 30.6875rem);
   }
 
-  :is(.why, .how) {
+  :is(.why, .what, .how) {
     grid-template-columns: 1fr 2fr;
   }
+
+  :is(.why, .how)>.section-heading {
+    grid-column: 1/2;
+  }
+
+  :is(.why, .how)>:is(.standard-list) {
+    grid-column: 2/-1;
+  }
+
+  .what>.section-heading {
+    grid-row: 1/2;
+    grid-column: 1/2;
+  }
+
+  .what .standard-list  {
+    grid-row: 2/3;
+    grid-column: 1/-1;
+  }
+
+
 
   .gallery__img-box {
     grid-template-columns: repeat(3, 1fr);
@@ -256,6 +287,10 @@
 
   .header__theme-menu-list {
     flex-direction: row;
+  }
+
+  :is(.why, .what, .how) {
+    grid-template-columns: repeat(3, 1fr);
   }
 
   .what .standard-list {
