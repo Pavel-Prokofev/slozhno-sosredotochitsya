@@ -90,7 +90,7 @@
   display: flex;
   flex-direction: column;
   row-gap: clamp(3.125rem, 2.0416rem + 4.6225vw, 5rem);
-  padding-block: clamp(2.5rem, 1.7777rem + 3.0817vw, 3.75rem);
+  padding-block: clamp(2.5rem, 1.3073rem + 5.0891vw, 3.75rem);
 }
 
 .standard-section {
@@ -241,12 +241,10 @@
     grid-column: 1/2;
   }
 
-  .what .standard-list  {
+  .what .standard-list {
     grid-row: 2/3;
     grid-column: 1/-1;
   }
-
-
 
   .gallery__img-box {
     grid-template-columns: repeat(3, 1fr);
