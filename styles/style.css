@@ -179,7 +179,7 @@
   border-inline-end: 1px solid currentColor;
   border-block-start: 1px solid currentColor;
   position: absolute;
-  inset-inline-end: var(--regular-pag-padding, 10px);;
+  inset-inline-end: var(--regular-pag-padding, 10px);
   inset-block-start: var(--regular-pag-padding, 10px);
 }
 
@@ -190,7 +190,7 @@
   border-inline-start: 1px solid currentColor;
   border-block-end: 1px solid currentColor;
   position: absolute;
-  inset-inline-start: var(--regular-pag-padding, 10px);;
+  inset-inline-start: var(--regular-pag-padding, 10px);
   inset-block-end: var(--regular-pag-padding, 10px);
 }
 
